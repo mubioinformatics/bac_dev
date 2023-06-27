@@ -20,9 +20,9 @@ HOME_R_DIR=${HOME}/R
 R_DIR=/storage/hpc/data/${USER}/R
 mkdir -p ${R_DIR}
 
-HOME_GIT_DIR=$HOME/git
-GIT_DIR=/storage/hpc/data/${USER}/git
-mkdir -p ${GIT_DIR}
+HOME_MYDATA=$HOME/mydata
+MYDATA=/storage/hpc/data/${USER}/mydata
+mkdir -p ${MYDATA}
 
 SITE_LIB=/storage/hpc/data/sw7v6/site-library
 
@@ -85,7 +85,7 @@ singularity exec -B ${SITE_LIB}:/usr/local/lib/R/site-library \
                     -B ${LOCAL_SHARE}:${HOME}/.local/share \
                     -B ${R_LIBS_USER}:${R_LIBS_USER} \
                     -B ${RSTUDIO_SESSION}:${HOME}/.local/share/rstudio \
-                    -B ${GIT_DIR}:${HOME_GIT_DIR} \
+                    -B ${MYDATA}:${HOME_MYDATA} \
                     -B ${R_DIR}:${HOME_R_DIR} \
                     -B ${WORK_DIR}/run:/run \
                     -B ${WORK_DIR}/tmp:/tmp \
